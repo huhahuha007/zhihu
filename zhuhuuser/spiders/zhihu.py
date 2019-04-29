@@ -37,7 +37,7 @@ class ZhihuSpider(Spider):
         results = json.loads(response.text)
         offset = 20
         self.offset = self.offset + offset
-
+        print('111111111111111111111')
         if 'data' in results.keys():
             for result in results.get('data'):
                 yield Request(self.user_url.format(user=result.get('url_token'), include=self.user_query),
